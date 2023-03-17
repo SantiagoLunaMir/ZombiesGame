@@ -1,0 +1,15 @@
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\bin\Debug\net6.0\Listas Genericas.exe
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\bin\Debug\net6.0\Listas Genericas.deps.json
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\bin\Debug\net6.0\Listas Genericas.runtimeconfig.json
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\bin\Debug\net6.0\Listas Genericas.dll
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\bin\Debug\net6.0\Listas Genericas.pdb
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.csproj.AssemblyReference.cache
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.AssemblyInfoInputs.cache
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.AssemblyInfo.cs
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.csproj.CoreCompileInputs.cache
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.dll
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\refint\Listas Genericas.dll
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.pdb
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\Listas Genericas.genruntimeconfig.cache
+C:\Users\verde\OneDrive\Escritorio\UASLP\4to_semestre\tecnologia_orientada_objetos\Listas Genericas\obj\Debug\net6.0\ref\Listas Genericas.dll
