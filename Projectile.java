@@ -13,9 +13,10 @@ public class Projectile extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Projectile(){
+        /*
         setImage(new GreenfootImage(10,2));
         getImage().setColor(Color.GRAY);
-        getImage().fillRect(0,0,10,2);
+        getImage().fillRect(0,0,10,2);*/
     }
     public void act()
     {

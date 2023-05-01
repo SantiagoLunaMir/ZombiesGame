@@ -1,5 +1,7 @@
 #Greenfoot project file
+class.MyWorld.image=descarga.jpg
 class.Player.image=95caf2485c9e224a94a059377604c63f-removebg-previewpng\ (1)\ (1).png
+class.Projectile.image=pngtree-bullet-icon-in-cartoon-style-png-image_1799886-removebg-preview\ (2).png
 dependency1.from=MyWorld
 dependency1.to=Player
 dependency1.type=UsesDependency
