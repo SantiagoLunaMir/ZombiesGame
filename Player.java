@@ -13,14 +13,18 @@ public class Player extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed=3;
+    int time=0;
     public Player(){
         
     }
     public void act()
     {
+        time++;
         turnAround();
         moveAround();
         fire();
+        //uLose();
+        hitByZombie();
     }
         public void turnAround(){
             if(Greenfoot.getMouseInfo()!=null){//si tenemos el mouse dentro
@@ -42,11 +46,25 @@ public class Player extends Actor
         } 
         }
         public void fire(){
-            if(Greenfoot.isKeyDown("space")/*Greenfoot.mousePressed(null)*/){//sustituir por espacio
+            if(Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation());
             }
+        }
+        /*public void uLose(){
+            if(isTouching(Zombie.class)){
+                getWorld().showText("Perdiste karnal, duraste: "+(time/60)+" segundos",getWorld().getWidth()/2,getWorld().getHeight()/2);
+                Greenfoot.stop();
+            }
+        }*/
+        public boolean hitByZombie(){
+            Actor zombie=getOneObjectAtOffset(0,0,Zombie.class);
+            if(zombie!=null){
+                return true;
+            }
+            else
+            return false;
         }
         // Add your action code here.
     
