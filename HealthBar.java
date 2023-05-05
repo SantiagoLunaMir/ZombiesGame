@@ -39,7 +39,7 @@ public class HealthBar extends Actor
             health--;
         }
         if(health<=0){
-            getWorld().showText("Perdiste chavo.\n con tiempo de: "+(myWorld.getPlayer().time/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
+            getWorld().showText("Mision Fallida.\n con tiempo de: "+(myWorld.getPlayer().time/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
             Greenfoot.stop();
         }
     }
