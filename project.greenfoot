@@ -1,18 +1,20 @@
 #Greenfoot project file
-class.BackButton.image=BackButton.png
-class.HowToPlayButton.image=HowToPlayButton.png
-class.MenuScreen.image=MenuScreen.png
 class.MyWorld.image=descarga.jpg
 class.Player.image=95caf2485c9e224a94a059377604c63f-removebg-previewpng\ (1)\ (1).png
 class.Projectile.image=pngtree-bullet-icon-in-cartoon-style-png-image_1799886-removebg-preview\ (2).png
+<<<<<<< HEAD
 class.Requiem.image=requiem_logo22.png
 class.ScoreboardButton.image=ScoreboardButton.png
 class.StartButton.image=StartButton.png
 class.Tutorial.image=descarga.jpg
+=======
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 class.Zombie.image=skeleton-idle_1.png
-dependency1.from=Menus
-dependency1.to=Requiem
+class.ZombieBoss.image=IDLE\ (1).png
+dependency1.from=MyWorld
+dependency1.to=Player
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 dependency10.from=Tutorial
 dependency10.to=Player
 dependency10.type=UsesDependency
@@ -51,25 +53,63 @@ dependency20.to=MenuScreen
 dependency20.type=UsesDependency
 dependency3.from=Menus
 dependency3.to=HowToPlayButton
+=======
+dependency10.from=Player
+dependency10.to=ZombieBoss
+dependency10.type=UsesDependency
+dependency11.from=Zombie
+dependency11.to=Player
+dependency11.type=UsesDependency
+dependency12.from=Zombie
+dependency12.to=Counter
+dependency12.type=UsesDependency
+dependency13.from=Zombie
+dependency13.to=Projectile
+dependency13.type=UsesDependency
+dependency14.from=HealthBar
+dependency14.to=MyWorld
+dependency14.type=UsesDependency
+dependency15.from=WeaponButton
+dependency15.to=Counter
+dependency15.type=UsesDependency
+dependency16.from=WeaponButton
+dependency16.to=Player
+dependency16.type=UsesDependency
+dependency17.from=ZombieBoss
+dependency17.to=Player
+dependency17.type=UsesDependency
+dependency18.from=ZombieBoss
+dependency18.to=Counter
+dependency18.type=UsesDependency
+dependency19.from=ZombieBoss
+dependency19.to=Projectile
+dependency19.type=UsesDependency
+dependency2.from=MyWorld
+dependency2.to=Counter
+dependency2.type=UsesDependency
+dependency3.from=MyWorld
+dependency3.to=HealthBar
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 dependency3.type=UsesDependency
-dependency4.from=Menus
-dependency4.to=ScoreboardButton
+dependency4.from=MyWorld
+dependency4.to=WeaponButton
 dependency4.type=UsesDependency
-dependency5.from=Menus
-dependency5.to=BackButton
+dependency5.from=MyWorld
+dependency5.to=Zombie
 dependency5.type=UsesDependency
 dependency6.from=MyWorld
-dependency6.to=Player
+dependency6.to=ZombieBoss
 dependency6.type=UsesDependency
-dependency7.from=MyWorld
-dependency7.to=Counter
+dependency7.from=Player
+dependency7.to=WeaponButton
 dependency7.type=UsesDependency
-dependency8.from=MyWorld
-dependency8.to=HealthBar
+dependency8.from=Player
+dependency8.to=Projectile
 dependency8.type=UsesDependency
-dependency9.from=MyWorld
+dependency9.from=Player
 dependency9.to=Zombie
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
@@ -77,6 +117,15 @@ editor.fx.0.y=0
 height=736
 package.numDependencies=20
 package.numTargets=15
+=======
+editor.fx.0.height=727
+editor.fx.0.width=1118
+editor.fx.0.x=1593
+editor.fx.0.y=10
+height=830
+package.numDependencies=19
+package.numTargets=8
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -98,6 +147,7 @@ target1.type=ClassTarget
 target1.width=120
 target1.x=0
 target1.y=0
+<<<<<<< HEAD
 target10.height=70
 target10.name=MenuScreen
 target10.showInterface=false
@@ -142,6 +192,10 @@ target15.x=0
 target15.y=0
 target2.height=70
 target2.name=Player
+=======
+target2.height=70
+target2.name=Counter
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
@@ -162,14 +216,22 @@ target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
+<<<<<<< HEAD
 target5.name=HowToPlayButton
+=======
+target5.name=WeaponButton
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
+<<<<<<< HEAD
 target6.name=BackButton
+=======
+target6.name=MyWorld
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
@@ -183,12 +245,17 @@ target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
+<<<<<<< HEAD
 target8.name=Projectile
+=======
+target8.name=ZombieBoss
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=0
 target8.y=0
+<<<<<<< HEAD
 target9.height=70
 target9.name=StartButton
 target9.showInterface=false
@@ -196,8 +263,10 @@ target9.type=ClassTarget
 target9.width=120
 target9.x=0
 target9.y=0
+=======
+>>>>>>> 542f785a6109e4d323b5d8e1b4e12ee9e5dbcb86
 version=3.0.0
-width=1382
-world.lastInstantiated=MenuScreen
+width=1550
+world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=0
