@@ -21,7 +21,7 @@ public class ZombieBoss extends Actor
     public ZombieBoss(Player mainPlayer,Counter counter){
         this.counter=counter;
         player=mainPlayer;
-        setImage("IDLE (82).png");
+        setImage("IDLE (10).png");
         //getImage().scale(30,30);//escalar la imagen
 
     }
