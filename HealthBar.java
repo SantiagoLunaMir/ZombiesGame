@@ -27,19 +27,19 @@ public class HealthBar extends Actor
         getImage().setColor(Color.RED);
         getImage().fillRect(1,1,health,10);
         World world=getWorld();
-        MyWorld myWorld=(MyWorld)world;//para obtener jugador
-        setLocation(myWorld.getPlayer().getX()-5,myWorld.getPlayer().getY()-50);
+        Level1 level1=(Level1)world;//para obtener jugador
+        setLocation(level1.getPlayer().getX()-5,level1.getPlayer().getY()-50);
         loseHealth();
         // Add your action code here.
     }
     public void loseHealth(){
         World world=getWorld();
-        MyWorld myWorld=(MyWorld)world;
-        if(myWorld.getPlayer().hitByZombie()){
+        Level1 level1=(Level1)world;
+        if(level1.getPlayer().hitByZombie()){
             health--;
         }
         if(health<=0){
-            getWorld().showText("Perdiste chavo.\n con tiempo de: "+(myWorld.getPlayer().time/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
+            getWorld().showText("REQUIEM\nNOT ACHIEVED.\n\n\n con tiempo de: "+(level1.getPlayer().time/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
             Greenfoot.stop();
         }
     }

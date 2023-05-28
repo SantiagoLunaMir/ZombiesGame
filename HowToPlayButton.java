@@ -16,4 +16,8 @@ public class HowToPlayButton extends Button
     {
         super.act(this.getClass().getName());
     }
+    
+    public void onButtonClicked(){
+        Greenfoot.setWorld(new Tutorial());
+    }
 }

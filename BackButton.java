@@ -15,5 +15,8 @@ public class BackButton extends Button
     public void act() 
     {
         super.act(this.getClass().getName());
-    }    
+    }   
+    public void onButtonClicked(){
+        Greenfoot.setWorld(new MenuScreen());
+    }
 }
