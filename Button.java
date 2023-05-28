@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Button extends Actor
+public abstract class Button extends Actor
 {
     /**
      * Act - do whatever the Buttons wants to do. This method is called whenever
@@ -30,11 +30,8 @@ public class Button extends Actor
         if (Greenfoot.mouseClicked(this)) {
             setImage(buttonName + ".png");
             Greenfoot.delay(5);  
-                                
-            if      (buttonName.equalsIgnoreCase("StartButton")) Greenfoot.setWorld(new MyWorld());
-            //else if (buttonName.equalsIgnoreCase("ScoreboardButton")) Greenfoot.setWorld(new );
-            //else if (buttonName.equalsIgnoreCase("HowToPlayButton"))  Greenfoot.setWorld(new );
-            else if (buttonName.equalsIgnoreCase("BackButton"))  Greenfoot.setWorld(new MenuScreen());
+            onButtonClicked();
         }
     }
+    public abstract void onButtonClicked();
 }

@@ -15,5 +15,9 @@ public class StartButton extends Button
     public void act() 
     {
         super.act(this.getClass().getName());
-    }    
+    }   
+    
+    public void onButtonClicked(){
+        Greenfoot.setWorld(new Level1());
+    }
 }

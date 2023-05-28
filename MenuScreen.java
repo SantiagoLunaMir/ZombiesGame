@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MenuScreen extends Menus
+public class MenuScreen extends Menu
 {
 
     /**
@@ -15,7 +15,10 @@ public class MenuScreen extends Menus
      */
     public MenuScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super();
+        addObject(new Requiem(), 200, 200);
+        addObject(new StartButton(), 200, 500);
+        addObject(new HowToPlayButton(), 500, 500);
+        addObject(new ScoreboardButton(),  800, 500);
     }
 }
