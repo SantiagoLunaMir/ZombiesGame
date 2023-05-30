@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=ScoreBoard
+comment1.params=width\ height
+comment1.target=ScoreBoard(int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ScoreBoard.\r\n\ <p>\r\n\ You\ can\ specify\ the\ width\ and\ height\ that\ the\ score\ board\ should\ be,\ but\r\n\ a\ minimum\ width\ of\ 600\ will\ be\ enforced.\r\n
+comment2.params=text\ x\ y\ color\ height
+comment2.target=void\ drawString(java.lang.String,\ int,\ int,\ greenfoot.Color,\ int)
+comment3.params=
+comment3.target=void\ drawScores()
+comment4.params=left\ top\ right\ bottom\ users
+comment4.target=void\ drawUserPanel(int,\ int,\ int,\ int,\ java.util.List)
+comment5.params=
+comment5.target=void\ leaderboard()
+numComments=6
