@@ -40,7 +40,9 @@ public class HealthBar extends Actor
         }
         if(health<=0){
             getWorld().showText("REQUIEM\nNOT ACHIEVED.\n\n\n con tiempo de: "+(level1.getPlayer().time/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
-            Greenfoot.stop();
+            getWorld().addObject(new BackButton(), 200, 500);
+            //Greenfoot.stop();
+            //Greenfoot.setWorld(new ScoreboardScreen());
         }
     }
 }
