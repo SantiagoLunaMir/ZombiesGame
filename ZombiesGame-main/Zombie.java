@@ -12,17 +12,16 @@ public class Zombie extends Actor
      * Act - do whatever the Zombie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int animateImage=1;//-16
-    int count;//-16
-    int animateSpeed=5;
-    int health=10;
-    Player player;
-    Counter counter;
+    private int animateImage=1;//-16
+    private int count;//-16
+    private int animateSpeed=5;
+    private int health=10;
+    private Player player;
+    private Counter counter;
     public Zombie(Player mainPlayer,Counter counter){
         this.counter=counter;
         player=mainPlayer;
         setImage("skeleton-move_16.png");
-        //getImage().scale(30,30);//escalar la imagen
 
     }
     public void act()
@@ -31,7 +30,6 @@ public class Zombie extends Actor
         animate();
         moveAround();
         hitByProjectile();
-        // Add your action code here.
     }
     public void animate(){
         if(count%animateSpeed==0){
@@ -44,8 +42,9 @@ public class Zombie extends Actor
         }
     }
     public void moveAround(){
-        move(1);
         turnTowards(player.getX(),player.getY());
+        move(1);
+        
     }
     public void hitByProjectile(){
         Actor projectile= getOneIntersectingObject(Projectile.class);
@@ -55,7 +54,7 @@ public class Zombie extends Actor
         }
         if(health==0){
             counter.score++;
-            counter.money+=5;
+            counter.setMoney(counter.getMoney()+5);
             getWorld().removeObject(this);
             //agregar mancha de sangre
         }

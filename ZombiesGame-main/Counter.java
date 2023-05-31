@@ -13,7 +13,13 @@ public class Counter extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public static int score=0;
-    int money=0;
+    private int money=0;
+    public void setMoney(int money){
+        this.money=money;
+    }
+    public int getMoney(){
+        return money;
+    }
     public Counter(){
         setImage(new GreenfootImage("Score: "+score+"\n Cash: "+money,40,Color.BLACK,new Color(0,0,0,0)));
         

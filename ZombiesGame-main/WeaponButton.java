@@ -13,15 +13,18 @@ public class WeaponButton extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     Counter counter;
-    int weaponUpgrade=1;
+    private int weaponUpgrade=1;
+    public int getWeaponUpgrade(){
+        return weaponUpgrade;
+    }
     public WeaponButton(Counter counter){
         this.counter=counter;
         setImage(new GreenfootImage("Weapon\n Upgrade!",25,Color.BLACK,new Color (0,0,0,0)));//cambiar por un bloque especial
     }
     public void act()
     {
-        if(Greenfoot.mousePressed(this) && counter.money>149){//preciona el objeto
-            counter.money-=150;
+        if(Greenfoot.mousePressed(this) && counter.getMoney()>149){//preciona el objeto
+            counter.setMoney(counter.getMoney()-150);//setMoney()
             weaponUpgrade++;
             getWorld().removeObject(this);
         }

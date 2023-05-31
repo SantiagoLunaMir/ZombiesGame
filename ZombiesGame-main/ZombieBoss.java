@@ -55,7 +55,7 @@ public class ZombieBoss extends Actor
         }
         if(health==0){
             counter.score++;
-            counter.money+=40;
+            counter.setMoney(counter.getMoney()+50);
             getWorld().removeObject(this);
             //agregar mancha de sangre
         }
