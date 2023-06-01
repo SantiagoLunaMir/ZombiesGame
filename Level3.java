@@ -25,11 +25,12 @@ public class Level3 extends World
     private Counter counter=new Counter();
     private HealthBar healthBar=new HealthBar();
     private WeaponButton weaponbutton=new WeaponButton(counter);
-    public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar) {
+    public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
         this.counter.setMoney(counter.getMoney());
         this.mainPlayer = mainPlayer;
         this.counter = counter;
         this.healthBar = healthBar;
+        this.zombiesSpawned=zombiesSpawned;
     }
     public Level3()
     {    

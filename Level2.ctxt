@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Level2
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=mainPlayer\ counter\ healthBar
-comment1.target=void\ setAttributes(Player,\ Counter,\ HealthBar)
+comment1.params=mainPlayer\ counter\ healthBar\ zombiesSpawned
+comment1.target=void\ setAttributes(Player,\ Counter,\ HealthBar,\ int)
 comment2.params=
 comment2.target=Level2()
 comment3.params=

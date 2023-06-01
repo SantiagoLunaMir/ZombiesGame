@@ -86,7 +86,7 @@ public class Level1 extends World
             }
             if(zombiesSpawned==33){
                 Level2 level2 = new Level2();
-                level2.setAttributes(mainPlayer, counter, healthbar);
+                level2.setAttributes(mainPlayer, counter, healthbar,zombiesSpawned);
                 Greenfoot.setWorld(level2);
             }
         }

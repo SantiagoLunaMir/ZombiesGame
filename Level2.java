@@ -25,11 +25,12 @@ public class Level2 extends World
     private HealthBar healthBar=new HealthBar();
     private WeaponButton weaponbutton=new WeaponButton(counter);
     private GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
-    public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar) {
+    public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
         this.counter.setMoney(counter.getMoney());
         this.mainPlayer = mainPlayer;
         this.counter = counter;
         this.healthBar = healthBar;
+        this.zombiesSpawned=zombiesSpawned;
     }
     public Level2()
     {    
@@ -92,7 +93,7 @@ public class Level2 extends World
             }
             if(zombiesSpawned==63){
                 Level3 level3 = new Level3();
-                level3.setAttributes(mainPlayer, counter, healthBar);
+                level3.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);
                 Greenfoot.setWorld(level3);
             }
         }
