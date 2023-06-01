@@ -12,12 +12,13 @@ public class ZombieBoss extends Actor
      * Act - do whatever the Zombie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int animateImage=1;//-16
-    int count;//-16
-    int animateSpeed=5;
-    int health=100;
-    Player player;
-    Counter counter;
+    private int animateImage=1;//-16
+    private int count;//-16
+    private int animateSpeed=5;
+    private int health=100;
+    private Player player;
+    private Counter counter;
+    
     public ZombieBoss(Player mainPlayer,Counter counter){
         this.counter=counter;
         player=mainPlayer;
@@ -55,8 +56,8 @@ public class ZombieBoss extends Actor
         }
         if(health==0){
             Greenfoot.playSound("ZombieDeath.mp3");
-            counter.score++;
-            counter.money+=40;
+            counter.setScore(counter.getScore()+1);
+            counter.setMoney(counter.getMoney()+40);
             getWorld().removeObject(this);
             //agregar mancha de sangre
         }

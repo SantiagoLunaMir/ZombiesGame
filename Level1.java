@@ -18,14 +18,13 @@ public class Level1 extends World
     private int count=0;
     private int cantZ=8;
     private int maxZombiesInWorld=32;
-    private int zombiesSpawned=0;//0
+    private int zombiesSpawned=29;//0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
     private Player mainPlayer=new Player();
     private Counter counter=new Counter();
     private HealthBar healthbar=new HealthBar();
     GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
-    GreenfootImage carretera=new GreenfootImage("vista-asfáltica-de-la-carretera-desde-arriba-178645525.jpg");
     private WeaponButton weaponbutton=new WeaponButton(counter);
     public Level1()
     {    
@@ -44,7 +43,7 @@ public class Level1 extends World
         
     }
     public void spawnZombies(){
-        if(count%SPAWN_SPEED==0 && zombiesSpawned<33){
+        if(count%SPAWN_SPEED==0 && zombiesSpawned<=33){
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
             switch(randomSpawn){
              case 0: 
@@ -80,8 +79,18 @@ public class Level1 extends World
                  zombiesSpawned++;
                  break;
             }
+            if(zombiesSpawned>=32){
+                addObject(new ZombieBoss(mainPlayer,counter),600,800);
+                zombiesSpawned++;
+                addObject(new WeaponButton(counter),100,500);
+            }
+            if(zombiesSpawned==33){
+                Level2 level2 = new Level2();
+                level2.setAttributes(mainPlayer, counter, healthbar);
+                Greenfoot.setWorld(level2);
+            }
         }
-        if(count%SPAWN_SPEED==0 && zombiesSpawned>32 && zombiesSpawned<50){
+        /*if(count%SPAWN_SPEED==0 && zombiesSpawned>32 && zombiesSpawned<50){
             setBackground(jardin);
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
             switch(randomSpawn){
@@ -108,8 +117,8 @@ public class Level1 extends World
                 addObject(new WeaponButton(counter),100,500);
             }
             
-        }
-        if(count%SPAWN_SPEED==0 && zombiesSpawned>=49 && zombiesSpawned<60){
+        }*/
+        /*if(count%SPAWN_SPEED==0 && zombiesSpawned>=49 && zombiesSpawned<60){
             setBackground(carretera);
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
             switch(randomSpawn){
@@ -142,8 +151,6 @@ public class Level1 extends World
                 addObject(new ZombieBoss(mainPlayer,counter),500,800);
                 zombiesSpawned+=3;
             }
-        }
-        
+        }*/
     }
-    
 }

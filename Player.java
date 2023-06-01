@@ -12,9 +12,18 @@ public class Player extends Actor
      * Act - do whatever the player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int speed=3;
-    int time=0;
-    WeaponButton weaponbutton;
+    private int speed=3;
+    private int time=0;
+    private WeaponButton weaponbutton;
+    public WeaponButton getPlayerWeapponButton(){
+        return weaponbutton;
+    }
+    public int getPlayerTime(){
+        return time;
+    }
+    public int getPlayerSpeed(){
+        return speed;
+    }
     public Player(){
         
     }
@@ -51,13 +60,13 @@ public class Player extends Actor
         } 
         }
         public void fire(){
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) && weaponbutton.weaponUpgrade==1){//sustituir por espacio
+            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) && weaponbutton.getWeaponUpgrade()==1){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation());
                 projectile.move(25);
             }
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))&& weaponbutton.weaponUpgrade==2){//sustituir por espacio
+            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))&& weaponbutton.getWeaponUpgrade()==2){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation()-5);
@@ -67,7 +76,7 @@ public class Player extends Actor
                 projectile2.setRotation(getRotation()+5);
                 projectile2.move(5);
             }
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) && weaponbutton.weaponUpgrade==3){//sustituir por espacio
+            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) && weaponbutton.getWeaponUpgrade()==3){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation()-5);
