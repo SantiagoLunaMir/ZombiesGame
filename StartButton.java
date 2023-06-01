@@ -25,6 +25,7 @@ public class StartButton extends Button
         //menuScreen.stopMusic();
         Greenfoot.setWorld(new Level1());
         //Greenfoot.deleteWorld(MenuScreen());
-        Counter.score = 0;
+        //private static Counter counter=new Counter();
+        //counter.getScore(counter.setScore(0));//redundancia
     }
 }
