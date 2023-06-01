@@ -14,7 +14,6 @@ public class Level2 extends World
      * 
      */
     private final int SPAWN_SPEED=50;
-    
     private int count=0;
     private int cantZ=8;
     private int money=0;

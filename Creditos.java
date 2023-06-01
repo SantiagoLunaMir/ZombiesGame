@@ -21,7 +21,6 @@ public class Creditos extends Menu
     public void act(){
         printCredits();
     }
-    public void printCredits(){
-        getBackground().drawImage(new GreenfootImage("UN JUEGO REALIZADO POR:\n Castillo Corpus Francisco Alejandro\n    y\nLuna Mireles Luis Santiago", 64, null, null), 40, 40);
+    public void printCredits() {
     }
 }

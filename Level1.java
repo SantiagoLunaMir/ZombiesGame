@@ -18,7 +18,7 @@ public class Level1 extends World
     private int count=0;
     private int cantZ=8;
     private int maxZombiesInWorld=32;
-    private int zombiesSpawned=29;//0
+    private int zombiesSpawned=0;//0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
     private Player mainPlayer=new Player();
