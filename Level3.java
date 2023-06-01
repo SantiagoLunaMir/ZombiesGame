@@ -92,7 +92,7 @@ public class Level3 extends World
             }
             //dar fin o scoreboard
         }
-        if(count%SPAWN_SPEED==0 && zombiesSpawned>32 && zombiesSpawned<50){
+        if(count%SPAWN_SPEED==0 && zombiesSpawned>32 && zombiesSpawned<=50){
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
             switch(randomSpawn){
              case 0: 
@@ -116,6 +116,10 @@ public class Level3 extends World
                 addObject(new ZombieBoss(mainPlayer,counter),600,800);
                 zombiesSpawned++;
                 addObject(new WeaponButton(counter),100,500);
+            }
+            if(zombiesSpawned>=50){
+                Creditos creditos= new Creditos();
+                Greenfoot.setWorld(creditos);
             }
         }
         

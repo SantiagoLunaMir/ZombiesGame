@@ -12,8 +12,17 @@ public class Counter extends Actor
      * Act - do whatever the Counter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private static int score=0;
-    private int money=0;
+    private static int score=0;//staticn't
+    private static int money=0;//staticn't
+    public int getScore(){
+        return score;
+    }
+    public static int getMoneyStatic(){
+        return money;
+    }
+    public static int getScoreStatic(){
+        return score;
+    }
     public void setScore(int score){
         this.score=score;
     }
@@ -29,11 +38,9 @@ public class Counter extends Actor
     }
     public void act()
     {
-        setImage(new GreenfootImage("Score: "+score+"\n Cash: "+money,40,Color.BLACK,new Color(0,0,0,0)));
-        // Add your action code here.
-    }
-    public static int getScore(){
-        return score;
+        //setImage(new GreenfootImage("Score: "+score+"\n Cash: "+money,40,Color.BLACK,new Color(0,0,0,0)));
+        GreenfootImage image = new GreenfootImage("Score: " + score + "\n Cash: " + money, 40, Color.BLACK, new Color(0, 0, 0, 0));
+        setImage(image);
     }
     public int resetScore(int score){
         score=0;

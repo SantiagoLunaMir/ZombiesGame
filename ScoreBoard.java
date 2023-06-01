@@ -25,7 +25,9 @@ public class ScoreBoard extends Actor
      */
     public ScoreBoard(int width, int height)
     {    
-        setImage(new GreenfootImage(Math.max(600, width), height)); 
+        //setImage(new GreenfootImage(Math.max(600, width), height)); 
+        GreenfootImage image = new GreenfootImage("Score: " + Counter.getScoreStatic() + "\n Cash: " + Counter.getMoneyStatic(), 40, Color.BLACK, new Color(0, 0, 0, 0));
+        setImage(image);
         leaderboard(); 
         drawScores();
     }
@@ -96,9 +98,9 @@ public class ScoreBoard extends Actor
         if (UserInfo.isStorageAvailable()) 
         {  
             UserInfo myInfo = UserInfo.getMyInfo();  
-            if (Counter.getScore() > myInfo.getScore()) 
+            if (Counter.getScoreStatic() > myInfo.getScore())
             {  
-                myInfo.setScore(Counter.getScore());  
+                myInfo.setScore(Counter.getScoreStatic());  
                 myInfo.store();   
             }  
  

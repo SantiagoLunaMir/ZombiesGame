@@ -17,6 +17,7 @@ public class Level2 extends World
     
     private int count=0;
     private int cantZ=8;
+    private int money=0;
     private int zombiesSpawned=0;//0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
@@ -47,7 +48,12 @@ public class Level2 extends World
     public void act(){
         count++;
         spawnZombies();
+        //cash(counter);
         
+    }
+    public void cash(Counter counter){
+        money=counter.getScore()*5;
+        counter.setMoney(money);
     }
     public void spawnZombies(){
         if(count%SPAWN_SPEED==0 && zombiesSpawned<=63){
