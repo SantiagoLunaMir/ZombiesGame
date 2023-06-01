@@ -26,4 +26,8 @@ public class Counter extends Actor
     public static int getScore(){
         return score;
     }
+    public int resetScore(int score){
+        score=0;
+        return score;
+    }
 }

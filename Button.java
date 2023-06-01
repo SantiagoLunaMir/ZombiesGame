@@ -29,7 +29,8 @@ public abstract class Button extends Actor
         }
         if (Greenfoot.mouseClicked(this)) {
             setImage(buttonName + ".png");
-            Greenfoot.delay(5);  
+            Greenfoot.playSound("Button.mp3");
+            Greenfoot.delay(5);
             onButtonClicked();
         }
     }

@@ -16,9 +16,15 @@ public class MenuScreen extends Menu
     public MenuScreen()
     {    
         super();
+        //prepare();
         addObject(new Requiem(), 200, 200);
         addObject(new StartButton(), 200, 500);
         addObject(new HowToPlayButton(), 500, 500);
         addObject(new ScoreboardButton(),  800, 500);
+    }
+    
+    public void prepare(){
+        GreenfootSound music = new GreenfootSound("Menu.mp3");
+        music.play();
     }
 }

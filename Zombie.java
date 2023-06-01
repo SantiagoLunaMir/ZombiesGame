@@ -54,6 +54,7 @@ public class Zombie extends Actor
             getWorld().removeObject(projectile);
         }
         if(health==0){
+            Greenfoot.playSound("ZombieDeath.mp3");
             counter.score++;
             counter.money+=5;
             getWorld().removeObject(this);

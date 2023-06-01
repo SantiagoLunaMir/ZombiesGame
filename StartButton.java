@@ -20,6 +20,7 @@ public class StartButton extends Button
     public void onButtonClicked(){
         Counter counter;
         Greenfoot.setWorld(new Level1());
+        //Greenfoot.deleteWorld(MenuScreen());
         Counter.score = 0;
     }
 }
