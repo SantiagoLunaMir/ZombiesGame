@@ -6,16 +6,16 @@ import java.util.List;
 public class ScoreBoard extends Actor
 {
     // The vertical gap between user images in the scoreboard:
-    private static final int GAP = 10;
+    private final int GAP = 10;
     // The height of the "All Players"/"Near Me" text at the top:
-    private static final int HEADER_TEXT_HEIGHT = 25;
+    private final int HEADER_TEXT_HEIGHT = 25;
     // The main text color:
-    private static final Color MAIN_COLOR = new Color(0x60, 0x60, 0x60); // dark grey
+    private final Color MAIN_COLOR = new Color(0x60, 0x60, 0x60); // dark grey
     // The score color:
-    private static final Color SCORE_COLOR = new Color(0xB0, 0x40, 0x40); // orange-y
+    private final Color SCORE_COLOR = new Color(0xB0, 0x40, 0x40); // orange-y
     // The background colors:
-    private static final Color BACKGROUND_COLOR = new Color(0xFF, 0xFF, 0xFF, 0xB0);
-    private static final Color BACKGROUND_HIGHLIGHT_COLOR = new Color(180, 230, 255, 0xB0);
+    private final Color BACKGROUND_COLOR = new Color(0xFF, 0xFF, 0xFF, 0xB0);
+    private final Color BACKGROUND_HIGHLIGHT_COLOR = new Color(180, 230, 255, 0xB0);
 
     /**
      * Constructor for objects of class ScoreBoard.
@@ -26,9 +26,8 @@ public class ScoreBoard extends Actor
     public ScoreBoard(int width, int height)
     {    
         setImage(new GreenfootImage(Math.max(600, width), height)); 
-        
-        drawScores();
         leaderboard(); 
+        drawScores();
     }
     
     private void drawString(String text, int x, int y, Color color, int height)
@@ -100,7 +99,7 @@ public class ScoreBoard extends Actor
             if (Counter.getScore() > myInfo.getScore()) 
             {  
                 myInfo.setScore(Counter.getScore());  
-                myInfo.store();  // write back to server  
+                myInfo.store();   
             }  
  
         }
