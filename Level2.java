@@ -14,7 +14,6 @@ public class Level2 extends World
      * 
      */
     private final int SPAWN_SPEED=50;
-    
     private int count=0;
     private int cantZ=8;
     private int money=0;
@@ -24,10 +23,8 @@ public class Level2 extends World
     private Player mainPlayer=new Player();
     private Counter counter=new Counter();
     private HealthBar healthBar=new HealthBar();
-    private WeaponButton weaponbutton=new WeaponButton(counter);
     private GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
     public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
-        this.counter.setMoney(counter.getMoney());
         this.mainPlayer = mainPlayer;
         this.counter = counter;
         this.healthBar = healthBar;
@@ -37,7 +34,7 @@ public class Level2 extends World
     {    
         super(1000, 600, 1);
         //setBackground(jardin);
-        mainPlayer=new Player(weaponbutton);
+        mainPlayer=new Player();
         addObject(mainPlayer,getWidth()/3,getHeight()/3);
         addObject(counter,130,100);
         addObject(healthBar,mainPlayer.getX()-5,mainPlayer.getY()-50);
@@ -53,7 +50,6 @@ public class Level2 extends World
     }
     public void cash(Counter counter){
         money=counter.getScore()*5;
-        counter.setMoney(money);
     }
     public void spawnZombies(){
         if(count%SPAWN_SPEED==0 && zombiesSpawned<=63){
@@ -95,7 +91,6 @@ public class Level2 extends World
             if(zombiesSpawned>=32){
                 addObject(new ZombieBoss(mainPlayer,counter),600,800);
                 zombiesSpawned++;
-                addObject(new WeaponButton(counter),100,500);
             }
             if(zombiesSpawned==63){
                 Level3 level3 = new Level3();

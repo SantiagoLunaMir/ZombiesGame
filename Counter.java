@@ -8,17 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Counter extends Actor
 {
-    /**
-     * Act - do whatever the Counter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    private static int score=0;//staticn't
-    private static int money=0;//staticn't
+    //static factory
+
+    private static int score=0;
     public int getScore(){
         return score;
-    }
-    public static int getMoneyStatic(){
-        return money;
     }
     public static int getScoreStatic(){
         return score;
@@ -26,20 +20,14 @@ public class Counter extends Actor
     public void setScore(int score){
         this.score=score;
     }
-    public void setMoney(int money){
-        this.money=money;
-    }
-    public int getMoney(){
-        return money;
-    }
     public Counter(){
-        setImage(new GreenfootImage("Score: "+score+"\n Cash: "+money,40,Color.BLACK,new Color(0,0,0,0)));
+        setImage(new GreenfootImage("Score: "+score,40,Color.BLACK,new Color(0,0,0,0)));
         
     }
     public void act()
     {
         //setImage(new GreenfootImage("Score: "+score+"\n Cash: "+money,40,Color.BLACK,new Color(0,0,0,0)));
-        GreenfootImage image = new GreenfootImage("Score: " + score + "\n Cash: " + money, 40, Color.BLACK, new Color(0, 0, 0, 0));
+        GreenfootImage image = new GreenfootImage("Score: " + score, 40, Color.BLACK, new Color(0, 0, 0, 0));
         setImage(image);
     }
     public int resetScore(int score){

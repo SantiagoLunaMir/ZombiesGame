@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.BackButton.image=BackButton.png
-class.Creditos.image=MenuScreen.png
+class.Creditos.image=nibucyfvgbhjj.png
 class.HowToPlayButton.image=HowToPlayButton.png
 class.Level1.image=descarga.jpg
 class.Level2.image=37004198-camino-a-pie-a-trav\u00E9s-del-jard\u00EDn-en-vista-a\u00E9rea.jpg
@@ -171,11 +171,19 @@ dependency8.type=UsesDependency
 dependency9.from=Level3
 dependency9.to=Counter
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=788
+=======
+editor.fx.0.height=830
+editor.fx.0.width=1550
+editor.fx.0.x=-7
+editor.fx.0.y=-7
+height=830
+>>>>>>> 4da7b595b07d27c11454ecd4140dddfde93a39ba
 package.numDependencies=52
 package.numTargets=23
 project.charset=UTF-8

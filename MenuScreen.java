@@ -13,7 +13,6 @@ public class MenuScreen extends Menu
      * Constructor for objects of class MenuScreen.
      * 
      */
-    private Music music;
     public MenuScreen()
     {    
         super();
@@ -22,15 +21,8 @@ public class MenuScreen extends Menu
         addObject(new StartButton(), 200, 500);
         addObject(new HowToPlayButton(), 500, 500);
         addObject(new ScoreboardButton(),  800, 500);
-        music = new Music();
-        prepare();
+        
     }
     
-    public void prepare(){
-        addObject(music,0,0);
-    }
     
-    public Music getMusic(){
-        return music;
-    }
 }
