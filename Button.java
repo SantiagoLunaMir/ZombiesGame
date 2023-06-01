@@ -15,6 +15,8 @@ public abstract class Button extends Actor
     
     public void act(String buttonName) 
     {
+        GreenfootSound push = new GreenfootSound("Button.mp3");
+        push.setVolume(50);
         if (Greenfoot.mouseMoved(this)) {
             setImage(buttonName + "_Over.png");
         } else if (Greenfoot.mouseMoved(null)) {
@@ -29,7 +31,7 @@ public abstract class Button extends Actor
         }
         if (Greenfoot.mouseClicked(this)) {
             setImage(buttonName + ".png");
-            Greenfoot.playSound("Button.mp3");
+            push.play();
             Greenfoot.delay(5);
             onButtonClicked();
         }
