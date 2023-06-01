@@ -18,10 +18,6 @@ public class StartButton extends Button
     }   
     
     public void onButtonClicked(){
-        MenuScreen menuScreen = getWorldOfType(MenuScreen.class);
-        Music music = menuScreen.getMusic();
-        music.stopPlaying();
-        getWorld().removeObject(music);
         //menuScreen.stopMusic();
         Greenfoot.setWorld(new Level1());
         //Greenfoot.deleteWorld(MenuScreen());

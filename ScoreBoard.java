@@ -24,10 +24,8 @@ public class ScoreBoard extends Actor
      * a minimum width of 600 will be enforced.
      */
     public ScoreBoard(int width, int height)
-    {    
-        //setImage(new GreenfootImage(Math.max(600, width), height)); 
-        GreenfootImage image = new GreenfootImage("Score: " + Counter.getScoreStatic() + "\n Cash: " + Counter.getMoneyStatic(), 40, Color.BLACK, new Color(0, 0, 0, 0));
-        setImage(image);
+    {     
+        setImage(new GreenfootImage(Math.max(600, width), height));
         leaderboard(); 
         drawScores();
     }
