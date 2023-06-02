@@ -44,7 +44,7 @@ public class Level2 extends World
         sillasjardin2.setRotation(70);
         sillasjardin3.setRotation(120);
         addObject(sillasjardin1,600,300);//150
-        addObject(sillasjardin2,100,200);
+        addObject(sillasjardin2,100,350);
         addObject(sillasjardin3,250,500);
         setPaintOrder(Player.class,HealthBar.class,Projectile.class,ZombieBoss.class, SillasJardin.class, Zombie.class, Projectile.class);
     }
