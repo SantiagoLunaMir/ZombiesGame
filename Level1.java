@@ -26,7 +26,10 @@ public class Level1 extends World
     private Player mainPlayer=new Player();
     private Counter counter=new Counter();
     private HealthBar healthbar=new HealthBar();
-    GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
+    private Cama cama=new Cama();
+    private Cama cama1=new Cama();
+    private Cama cama2=new Cama();
+    private Cama cama3=new Cama();
     public Level1()
     {    
         super(1000, 600, 1);
@@ -35,6 +38,14 @@ public class Level1 extends World
         addObject(mainPlayer,getWidth()/2,getHeight()/2);
         addObject(counter,130,100);
         addObject(healthbar,mainPlayer.getX()-5,mainPlayer.getY()-50);
+        cama.setRotation(45);
+        cama2.setRotation(70);
+        cama3.setRotation(120);
+        addObject(cama,700,500);//150
+        addObject(cama1,50,200);
+        addObject(cama2,750,550);
+        addObject(cama3,350,250);
+        setPaintOrder(Player.class,HealthBar.class,Projectile.class, Cama.class, Zombie.class, Projectile.class);
         //Counter.setScore(0);
     }
     public Player getPlayer(){
@@ -47,47 +58,35 @@ public class Level1 extends World
         
     }
     public void spawnZombies(){
-        if(count%SPAWN_SPEED==0 && zombiesSpawned<=33){
+        if(count%SPAWN_SPEED==0 && (counter.getScore()<=60&&zombiesSpawned<=61)){
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
-            switch(randomSpawn){
+            switch(randomSpawn){//getHeight(), altura, getWidth(), ancho
              case 0: 
                  addObject(new Zombie(mainPlayer,counter),0,0);
                  zombiesSpawned++;
                  break;
              case 1: 
-                 addObject(new Zombie(mainPlayer,counter),0,800);
+                 addObject(new Zombie(mainPlayer,counter),0,getWidth());
                  zombiesSpawned++;
                  break;   
              case 2: 
-                 addObject(new Zombie(mainPlayer,counter),600,0);
+                 addObject(new Zombie(mainPlayer,counter),getHeight(),0);
                  zombiesSpawned++;
                  break;
              case 3: 
-                 addObject(new Zombie(mainPlayer,counter),600,800);
+                 addObject(new Zombie(mainPlayer,counter),getHeight(),getWidth());
                  zombiesSpawned++;
                  break;
              case 4: 
-                 addObject(new Zombie(mainPlayer,counter),getWidth(),getHeight());
+                 addObject(new Zombie(mainPlayer,counter),getWidth()/2,getHeight());
                  zombiesSpawned++;
                  break;
              case 5: 
-                 addObject(new Zombie(mainPlayer,counter),600,getHeight()/2);
-                 zombiesSpawned++;
-                 break;
-             case 6: 
-                 addObject(new Zombie(mainPlayer,counter),getWidth()/2,800);
-                 zombiesSpawned++;
-                 break;
-             case 7: 
-                 addObject(new Zombie(mainPlayer,counter),10,10);
+                 addObject(new Zombie(mainPlayer,counter),getWidth(),getHeight()/2);
                  zombiesSpawned++;
                  break;
             }
-            if(zombiesSpawned>=32){
-                addObject(new ZombieBoss(mainPlayer,counter),600,800);
-                zombiesSpawned++;
-            }
-            if(zombiesSpawned==33){
+            if(counter.getScore()>=60){
                 Level2 level2 = new Level2(mainPlayer);
                 level2.setAttributes(mainPlayer, counter, healthbar,zombiesSpawned);
                 Greenfoot.setWorld(level2);

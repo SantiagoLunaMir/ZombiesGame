@@ -49,18 +49,20 @@ public class Player extends Actor
         }
         }
         public void moveAround(){
-           if(Greenfoot.isKeyDown("w")){//si tenemos el mouse dentro
-        setLocation(getX(),getY()-speed);
-        }
-        if(Greenfoot.isKeyDown("s")){//si tenemos el mouse dentro
-        setLocation(getX(),getY()+speed);
-        }
-        if(Greenfoot.isKeyDown("a")){//si tenemos el mouse dentro
-        setLocation(getX()-speed,getY());
-        }
-        if(Greenfoot.isKeyDown("d")){//si tenemos el mouse dentro
-        setLocation(getX()+speed,getY());
-        } 
+            
+               if(Greenfoot.isKeyDown("w")){//si tenemos el mouse dentro
+            setLocation(getX(),getY()-speed);
+            }
+            if(Greenfoot.isKeyDown("s")){//si tenemos el mouse dentro
+            setLocation(getX(),getY()+speed);
+            }
+            if(Greenfoot.isKeyDown("a")){//si tenemos el mouse dentro
+            setLocation(getX()-speed,getY());
+            }
+            if(Greenfoot.isKeyDown("d")){//si tenemos el mouse dentro
+            setLocation(getX()+speed,getY());
+            } 
+        
         }
         public void fire(){
             if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))){//sustituir por espacio
