@@ -64,7 +64,6 @@ public class ZombieBoss extends Actor
         if(health==0){
             Greenfoot.playSound("ZombieDeath.mp3");
             counter.setScore(counter.getScore()+1);
-            counter.setMoney(counter.getMoney()+40);
             getWorld().removeObject(this);
             //agregar mancha de sangre
         }

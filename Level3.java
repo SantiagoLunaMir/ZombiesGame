@@ -24,9 +24,7 @@ public class Level3 extends World
     private Player mainPlayer=new Player();
     private Counter counter=new Counter();
     private HealthBar healthBar=new HealthBar();
-    private WeaponButton weaponbutton=new WeaponButton(counter);
     public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
-        this.counter.setMoney(counter.getMoney());
         this.mainPlayer = mainPlayer;
         this.counter = counter;
         this.healthBar = healthBar;
@@ -35,7 +33,11 @@ public class Level3 extends World
     public Level3(Player player)
     {    
         super(1000, 600, 1);
+<<<<<<< HEAD
         mainPlayer=player;
+=======
+        mainPlayer=new Player();
+>>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
         addObject(mainPlayer,getWidth()/2,getHeight()/2);
         addObject(counter,130,100);
         addObject(healthBar,mainPlayer.getX()-5,mainPlayer.getY()-50);
@@ -88,7 +90,10 @@ public class Level3 extends World
             if(zombiesSpawned>=32){
                 addObject(new ZombieBoss(mainPlayer,counter),600,800);
                 zombiesSpawned++;
+<<<<<<< HEAD
                 //addObject(new WeaponButton(counter),100,500);
+=======
+>>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
             }
             //dar fin o scoreboard
         }
@@ -115,7 +120,6 @@ public class Level3 extends World
             if(zombiesSpawned==49){
                 addObject(new ZombieBoss(mainPlayer,counter),600,800);
                 zombiesSpawned++;
-                addObject(new WeaponButton(counter),100,500);
             }
             if(zombiesSpawned>=50){
                 Creditos creditos= new Creditos();

@@ -14,10 +14,6 @@ public class Player extends Actor
      */
     private int speed=3;
     private int time=0;
-    private WeaponButton weaponbutton;
-    public WeaponButton getPlayerWeapponButton(){
-        return weaponbutton;
-    }
     public int getPlayerTime(){
         return time;
     }
@@ -26,9 +22,6 @@ public class Player extends Actor
     }
     public Player(){
         
-    }
-    public Player(WeaponButton weaponbutton){
-        this.weaponbutton=weaponbutton;
     }
     public void act()
     {
@@ -60,11 +53,12 @@ public class Player extends Actor
         } 
         }
         public void fire(){
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) && weaponbutton.getWeaponUpgrade()==1){//sustituir por espacio
+            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) ){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation());
                 projectile.move(25);
+<<<<<<< HEAD
             }/*
             if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))&& weaponbutton.getWeaponUpgrade()==2){//sustituir por espacio
                 Projectile projectile=new Projectile();
@@ -90,6 +84,10 @@ public class Player extends Actor
                 projectile3.setRotation(getRotation());
                 projectile3.move(5);
             }*/
+=======
+            }
+            
+>>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
         }
         
         public boolean hitByZombie(){
@@ -101,10 +99,15 @@ public class Player extends Actor
             else
             return false;
         }
+<<<<<<< HEAD
         public void touchBoxes(){
         Actor weaponButton= getOneIntersectingObject(WeaponButton.class);
         if(Greenfoot.mousePressed(weaponbutton)){
                 getWorld().removeObject(weaponButton);
         }
     }
+=======
+        
+>>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
 }
+        // Add your action code here}

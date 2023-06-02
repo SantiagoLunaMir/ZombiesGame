@@ -171,11 +171,23 @@ dependency8.type=UsesDependency
 dependency9.from=Level3
 dependency9.to=Counter
 dependency9.type=UsesDependency
+<<<<<<< HEAD
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+height=788
+=======
 editor.fx.0.height=830
 editor.fx.0.width=1550
 editor.fx.0.x=-7
 editor.fx.0.y=-7
+<<<<<<< HEAD
 height=822
+=======
+height=830
+>>>>>>> 4da7b595b07d27c11454ecd4140dddfde93a39ba
+>>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
 package.numDependencies=52
 package.numTargets=23
 project.charset=UTF-8
@@ -354,7 +366,11 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< HEAD
 width=780
+=======
+width=1386
+>>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
 world.lastInstantiated=MenuScreen
 xPosition=0
-yPosition=0
+yPosition=43
