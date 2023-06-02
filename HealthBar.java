@@ -63,11 +63,7 @@ public class HealthBar extends Actor
             health--;
         }
         if(health<=0){
-            getWorld().showText("REQUIEM\nNOT ACHIEVED.\n\n\n con tiempo de: "+(level3.getPlayer().getPlayerTime()/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
-            
-            getWorld().addObject(new BackButton(), 200, 500);
-            //Greenfoot.stop();
-            //Greenfoot.setWorld(new ScoreboardScreen());
+            Greenfoot.setWorld(new GameOver());
         }
     }
     public void loseHealth(Level2 level2){
@@ -77,11 +73,7 @@ public class HealthBar extends Actor
             health--;
         }
         if(health<=0){
-            getWorld().showText("REQUIEM\nNOT ACHIEVED.\n\n\n con tiempo de: "+(level2.getPlayer().getPlayerTime()/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
-            
-            getWorld().addObject(new BackButton(), 200, 500);
-            //Greenfoot.stop();
-            //Greenfoot.setWorld(new ScoreboardScreen());
+            Greenfoot.setWorld(new GameOver());
         }
     }
     public void loseHealth(Level1 level1){
@@ -91,10 +83,8 @@ public class HealthBar extends Actor
             health--;
         }
         if(health<=0){
-            getWorld().showText("REQUIEM\nNOT ACHIEVED.\n\n\n con tiempo de: "+(level1.getPlayer().getPlayerTime()/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
-            getWorld().addObject(new BackButton(), 200, 500);
-            //Greenfoot.stop();
-            //Greenfoot.setWorld(new ScoreboardScreen());
+            Greenfoot.setWorld(new GameOver());
+
         }
     }
 }
