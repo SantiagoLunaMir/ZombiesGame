@@ -30,11 +30,10 @@ public class Level2 extends World
         this.healthBar = healthBar;
         this.zombiesSpawned=zombiesSpawned;
     }
-    public Level2()
+    public Level2(Player player)
     {    
         super(1000, 600, 1);
-        //setBackground(jardin);
-        mainPlayer=new Player();
+        mainPlayer=player;
         addObject(mainPlayer,getWidth()/3,getHeight()/3);
         addObject(counter,130,100);
         addObject(healthBar,mainPlayer.getX()-5,mainPlayer.getY()-50);
@@ -52,7 +51,7 @@ public class Level2 extends World
         money=counter.getScore()*5;
     }
     public void spawnZombies(){
-        if(count%SPAWN_SPEED==0 && zombiesSpawned<=63){
+        if(count%SPAWN_SPEED==0 && counter.getScore()<=69){
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
             switch(randomSpawn){
              case 0: 
@@ -76,7 +75,7 @@ public class Level2 extends World
                  zombiesSpawned++;
                  break;
              case 5: 
-                 addObject(new Zombie(mainPlayer,counter),600,getHeight()/2);
+                 addObject(new Zombie(mainPlayer,counter),600,getHeight()/2);//altura
                  zombiesSpawned++;
                  break;
              case 6: 
@@ -88,12 +87,12 @@ public class Level2 extends World
                  zombiesSpawned++;
                  break;
             }
-            if(zombiesSpawned>=32){
-                addObject(new ZombieBoss(mainPlayer,counter),600,800);
+            if(counter.getScore()>=63 && counter.getScore()<=66){
+                addObject(new ZombieBoss(mainPlayer,counter),getWidth()/2,800);
                 zombiesSpawned++;
             }
-            if(zombiesSpawned==63){
-                Level3 level3 = new Level3();
+            if(counter.getScore()==70){
+                Level3 level3 = new Level3(mainPlayer);
                 level3.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);
                 Greenfoot.setWorld(level3);
             }

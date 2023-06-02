@@ -31,9 +31,16 @@ public class ZombieBoss extends Actor
         count++;
         animate();
         moveAround();
+        //followPlayer();
         hitByProjectile();
         // Add your action code here.
     }
+    public void followPlayer(Player player) {
+    if (player != null) {
+        turnTowards(player.getX(), player.getY());
+        move(1);
+    }
+}
     public void animate(){
         if(count%animateSpeed==0){
             if(animateImage>20){
@@ -45,8 +52,15 @@ public class ZombieBoss extends Actor
         }
     }
     public void moveAround(){
-        move(1);
-        turnTowards(player.getX(),player.getY());
+        Actor cama=getOneIntersectingObject(Cama.class);
+        if(cama==null){
+            move(1);
+            turnTowards(player.getX(),player.getY());
+        }
+        if(cama!=null){
+            move(0);
+            turnTowards(player.getX(),player.getY());
+        }
     }
     public void hitByProjectile(){
         Actor projectile= getOneIntersectingObject(Projectile.class);

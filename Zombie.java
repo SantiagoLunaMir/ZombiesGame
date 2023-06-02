@@ -27,9 +27,9 @@ public class Zombie extends Actor
     }
     public void act()
     {
-        count++;
-        animate();
         moveAround();
+        count++;
+        animate();        
         hitByProjectile();
         // Add your action code here.
     }
@@ -44,8 +44,17 @@ public class Zombie extends Actor
         }
     }
     public void moveAround(){
-        move(1);
-        turnTowards(player.getX(),player.getY());
+        Actor cama=getOneIntersectingObject(Cama.class);
+        if(cama==null){
+            move(1);
+            turnTowards(player.getX(),player.getY());
+        }
+        if(cama!=null){
+            move(0);
+            turnTowards(player.getX(),player.getY());
+        }
+        
+        
     }
     public void hitByProjectile(){
         Actor projectile= getOneIntersectingObject(Projectile.class);

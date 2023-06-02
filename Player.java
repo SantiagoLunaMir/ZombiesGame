@@ -14,15 +14,22 @@ public class Player extends Actor
      */
     private int speed=3;
     private int time=0;
-    public int getPlayerTime(){
+    /*private WeaponButton weaponbutton;
+    public WeaponButton getWeaponButton(){
+        return weaponbutton;
+    }*/
+    public int getTime(){
         return time;
     }
-    public int getPlayerSpeed(){
+    public int getSpeed(){
         return speed;
     }
     public Player(){
         
     }
+    /*public Player(WeaponButton weaponbutton){
+        this.weaponbutton=weaponbutton;
+    }*/
     public void act()
     {
         time++;
@@ -33,27 +40,32 @@ public class Player extends Actor
         //touchBoxes();
         
     }
+    public int getPlayerTime(){
+        return time;
+    }
         public void turnAround(){
             if(Greenfoot.getMouseInfo()!=null){//si tenemos el mouse dentro
         turnTowards(Greenfoot.getMouseInfo().getX(),Greenfoot.getMouseInfo().getY());
         }
         }
         public void moveAround(){
-           if(Greenfoot.isKeyDown("w")){//si tenemos el mouse dentro
-        setLocation(getX(),getY()-speed);
-        }
-        if(Greenfoot.isKeyDown("s")){//si tenemos el mouse dentro
-        setLocation(getX(),getY()+speed);
-        }
-        if(Greenfoot.isKeyDown("a")){//si tenemos el mouse dentro
-        setLocation(getX()-speed,getY());
-        }
-        if(Greenfoot.isKeyDown("d")){//si tenemos el mouse dentro
-        setLocation(getX()+speed,getY());
-        } 
+            
+               if(Greenfoot.isKeyDown("w")){//si tenemos el mouse dentro
+            setLocation(getX(),getY()-speed);
+            }
+            if(Greenfoot.isKeyDown("s")){//si tenemos el mouse dentro
+            setLocation(getX(),getY()+speed);
+            }
+            if(Greenfoot.isKeyDown("a")){//si tenemos el mouse dentro
+            setLocation(getX()-speed,getY());
+            }
+            if(Greenfoot.isKeyDown("d")){//si tenemos el mouse dentro
+            setLocation(getX()+speed,getY());
+            } 
+        
         }
         public void fire(){
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) ){//sustituir por espacio
+            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation());
@@ -71,6 +83,12 @@ public class Player extends Actor
             else
             return false;
         }
-        
-}
-        // Add your action code here}
+        /*public void touchBoxes(){
+        Actor weaponButton= getOneIntersectingObject(WeaponButton.class);
+        if(Greenfoot.mousePressed(weaponbutton)){
+                getWorld().removeObject(weaponButton);
+        }
+        }*/
+        // Add your action code here.
+    
+}       // Add your action code here}
