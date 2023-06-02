@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Coche1 extends Actor
 {
-    private int width = 80;
-    private int height = 90;
+    private int width = 1;
+    private int height = 1;
 
     public Coche1() {
         GreenfootImage image = new GreenfootImage("coche1.png");
