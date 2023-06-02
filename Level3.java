@@ -58,7 +58,7 @@ public class Level3 extends World
         money=counter.getScore()*5;
     }
     public void spawnZombies(){
-    if(count%SPAWN_SPEED==0 && (counter.getScore()<=110&&zombiesSpawned<=111)){
+    if(count%SPAWN_SPEED==0 && (counter.getScore()<=120&&zombiesSpawned<=121)){
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
             switch(randomSpawn){//getHeight(), altura, getWidth(), ancho
              case 0: 
@@ -87,7 +87,7 @@ public class Level3 extends World
                  break;
             }
         }
-            if(counter.getScore()>=109){
+            if(counter.getScore()>=119){
                 Creditos creditos = new Creditos();
                 //creditos.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);
                 Greenfoot.setWorld(creditos);
