@@ -23,10 +23,10 @@ public class ScoreBoard extends Actor
      * You can specify the width and height that the score board should be, but
      * a minimum width of 600 will be enforced.
      */
-    public ScoreBoard(int width, int height)
+    public ScoreBoard(int width, int height,int finalScore)
     {     
         setImage(new GreenfootImage(Math.max(600, width), height));
-        leaderboard(); 
+        leaderboard(finalScore); 
         drawScores();
     }
     
@@ -91,14 +91,14 @@ public class ScoreBoard extends Actor
             y += 50 + 2*GAP;
         }
     }
-    public void leaderboard()
+    public void leaderboard(int finalScore)
     {
         if (UserInfo.isStorageAvailable()) 
         {  
             UserInfo myInfo = UserInfo.getMyInfo();  
-            if (Counter.getScoreStatic() > myInfo.getScore())
+            if (finalScore > myInfo.getScore())
             {  
-                myInfo.setScore(Counter.getScoreStatic());  
+                myInfo.setScore(finalScore);  
                 myInfo.store();   
             }  
  

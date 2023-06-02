@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ScoreboardScreen extends Menu
 {
-    public ScoreboardScreen()
+    public ScoreboardScreen(int finalScore)
     {
-        addObject(new ScoreBoard(600, 400), 500, 250);
+        addObject(new ScoreBoard(600, 400,finalScore), 500, 250);
     }
     
 }

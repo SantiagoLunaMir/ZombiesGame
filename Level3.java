@@ -17,6 +17,7 @@ public class Level3 extends World
     private int count=0;
     private int cantZ=8;
     private int money=0;
+    private int finalScore=0;
     private int zombiesSpawned=0;//0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
@@ -48,6 +49,9 @@ public class Level3 extends World
     public Player getPlayer(){
         return mainPlayer;
     }
+    public Counter getCounter(){
+        return counter;
+    }
     public void act(){
         count++;
         spawnZombies();
@@ -67,7 +71,8 @@ public class Level3 extends World
                  break;
              case 1: 
                  addObject(new ZombieBoss(mainPlayer,counter),0,getWidth());
-                 zombiesSpawned++;
+                 addObject(new Zombie(mainPlayer,counter),0,getWidth());
+                 zombiesSpawned+=2;
                  break;   
              case 2: 
                  addObject(new Zombie(mainPlayer,counter),getHeight(),0);
@@ -75,7 +80,8 @@ public class Level3 extends World
                  break;
              case 3: 
                  addObject(new ZombieBoss(mainPlayer,counter),getHeight(),getWidth());
-                 zombiesSpawned++;
+                 addObject(new Zombie(mainPlayer,counter),getHeight(),getWidth());
+                 zombiesSpawned+=2;
                  break;
              case 4: 
                  addObject(new Zombie(mainPlayer,counter),getWidth()/2,getHeight());
@@ -83,12 +89,14 @@ public class Level3 extends World
                  break;
              case 5: 
                  addObject(new ZombieBoss(mainPlayer,counter),getWidth(),getHeight()/2);
-                 zombiesSpawned++;
+                 addObject(new Zombie(mainPlayer,counter),getWidth(),getHeight()/2);
+                 zombiesSpawned+=2;
                  break;
             }
         }
             if(counter.getScore()>=119){
-                Creditos creditos = new Creditos();
+                finalScore=counter.getScore()/mainPlayer.getTime();
+                Creditos creditos = new Creditos(finalScore);
                 //creditos.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);
                 Greenfoot.setWorld(creditos);
             }

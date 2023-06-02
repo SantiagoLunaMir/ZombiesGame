@@ -18,6 +18,6 @@ public class ScoreboardButton extends Button
     }
     
     public void onButtonClicked(){
-        Greenfoot.setWorld(new ScoreboardScreen());
+        Greenfoot.setWorld(new ScoreboardScreen(0));
     }
 }

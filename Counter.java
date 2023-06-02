@@ -8,15 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Counter extends Actor
 {
-    //static factory
 
     private static int score=0;
     public int getScore(){
         return score;
     }
-    public static int getScoreStatic(){
-        return score;
-    }
+
     public void setScore(int score){
         this.score=score;
     }
@@ -34,4 +31,5 @@ public class Counter extends Actor
         score=0;
         return score;
     }
+    
 }

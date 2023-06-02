@@ -17,6 +17,6 @@ public class Requiem extends Button
         super.act(this.getClass().getName());
     }
     public void onButtonClicked(){
-        Greenfoot.setWorld(new Creditos());
+        Greenfoot.setWorld(new Creditos(0));
     }
 }

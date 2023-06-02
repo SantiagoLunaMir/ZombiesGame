@@ -13,6 +13,7 @@ public class HealthBar extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int health=100;
+    private int finalScore=0;
     public int getHealth(){
         return health;
     }
@@ -58,34 +59,40 @@ public class HealthBar extends Actor
     }
     public void loseHealth(Level3 level3){
         World world=getWorld();
+        
         //Level1 level1=(Level1)world;
         if(level3.getPlayer().hitByZombie()){
             health--;
         }
         if(health<=0){
-            Greenfoot.setWorld(new GameOver());
+            finalScore=level3.getCounter().getScore()+1/level3.getPlayer().getTime();
+            Greenfoot.setWorld(new GameOver(finalScore));
             Greenfoot.playSound("defeat.mp3");
         }
     }
     public void loseHealth(Level2 level2){
         World world=getWorld();
+        
         //Level1 level1=(Level1)world;
         if(level2.getPlayer().hitByZombie()){
             health--;
         }
         if(health<=0){
-            Greenfoot.setWorld(new GameOver());
+            finalScore=level2.getCounter().getScore()+1/level2.getPlayer().getTime();
+            Greenfoot.setWorld(new GameOver(finalScore));
             Greenfoot.playSound("defeat.mp3");
         }
     }
     public void loseHealth(Level1 level1){
         World world=getWorld();
+        
         //Level1 level1=(Level1)world;
         if(level1.getPlayer().hitByZombie()){
             health--;
         }
         if(health<=0){
-            Greenfoot.setWorld(new GameOver());
+            finalScore=level1.getCounter().getScore()+1/level1.getPlayer().getTime();
+            Greenfoot.setWorld(new GameOver(finalScore));
             Greenfoot.playSound("defeat.mp3");
         }
     }

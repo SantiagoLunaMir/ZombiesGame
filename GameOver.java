@@ -13,8 +13,10 @@ public class GameOver extends Menu
      * Constructor for objects of class GameOver.
      * 
      */
-    public GameOver()
+    public GameOver(int finalScore)
     {
         super();
+        ScoreBoard scoreBoard = new ScoreBoard(1,1,finalScore);
+        scoreBoard.leaderboard(finalScore);
     }
 }

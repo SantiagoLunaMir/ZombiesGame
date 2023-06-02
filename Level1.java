@@ -48,6 +48,9 @@ public class Level1 extends World
         setPaintOrder(Player.class,HealthBar.class,Projectile.class, Cama.class, Zombie.class, Projectile.class);
         //Counter.setScore(0);
     }
+    public Counter getCounter(){
+        return counter;
+    }
     public Player getPlayer(){
         return mainPlayer;
     }
@@ -86,7 +89,7 @@ public class Level1 extends World
                  zombiesSpawned++;
                  break;
             }
-            if(counter.getScore()>=59){
+            if(counter.getScore()>=59||zombiesSpawned>=59){
                 Level2 level2 = new Level2(mainPlayer);
                 level2.setAttributes(mainPlayer, counter, healthbar,zombiesSpawned);
                 Greenfoot.setWorld(level2);

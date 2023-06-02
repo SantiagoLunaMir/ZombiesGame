@@ -30,6 +30,7 @@ public class Level2 extends World
     public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
         this.mainPlayer = mainPlayer;
         this.counter = counter;
+        this.counter.setScore(counter.getScore());
         this.healthBar = healthBar;
         this.zombiesSpawned=zombiesSpawned;
     }
@@ -59,6 +60,9 @@ public class Level2 extends World
     }
     public void cash(Counter counter){
         money=counter.getScore()*5;
+    }
+    public Counter getCounter(){
+        return counter;
     }
     public void spawnZombies(){
         if(count%SPAWN_SPEED==0 && (counter.getScore()<=80&&zombiesSpawned<=81)){

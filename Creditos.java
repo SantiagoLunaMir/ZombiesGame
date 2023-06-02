@@ -13,10 +13,11 @@ public class Creditos extends Menu
      * Constructor for objects of class Creditos.
      * 
      */
-    public Creditos()
+    public Creditos(int finalScore)
     {    
+        ScoreBoard scoreBoard = new ScoreBoard(1,1,finalScore);
+        scoreBoard.leaderboard(finalScore);
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super();
     }
     public void act(){
         printCredits();
