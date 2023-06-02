@@ -20,7 +20,7 @@ public class Level1 extends World
     private int count=0;
     private int cantZ=8;
     private int maxZombiesInWorld=32;
-    private int zombiesSpawned=0;//0
+    private int zombiesSpawned=50;/////0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
     private Player mainPlayer=new Player();
@@ -34,7 +34,7 @@ public class Level1 extends World
     {    
         super(1000, 600, 1);
         //mainPlayer=new Player();
-        counter.setScore(0);
+        counter.setScore(50);/////0
         addObject(mainPlayer,getWidth()/2,getHeight()/2);
         addObject(counter,130,100);
         addObject(healthbar,mainPlayer.getX()-5,mainPlayer.getY()-50);
@@ -86,7 +86,7 @@ public class Level1 extends World
                  zombiesSpawned++;
                  break;
             }
-            if(counter.getScore()>=60){
+            if(counter.getScore()>=59){
                 Level2 level2 = new Level2(mainPlayer);
                 level2.setAttributes(mainPlayer, counter, healthbar,zombiesSpawned);
                 Greenfoot.setWorld(level2);
