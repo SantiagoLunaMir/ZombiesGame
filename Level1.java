@@ -23,17 +23,19 @@ public class Level1 extends World
     private int zombiesSpawned=0;//0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
-    private Player mainPlayer/*=new Player()*/;
+    private Player mainPlayer=new Player();
     private Counter counter=new Counter();
     private HealthBar healthbar=new HealthBar();
     GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
     public Level1()
     {    
         super(1000, 600, 1);
-        mainPlayer=new Player();
+        //mainPlayer=new Player();
+        counter.setScore(0);
         addObject(mainPlayer,getWidth()/2,getHeight()/2);
         addObject(counter,130,100);
         addObject(healthbar,mainPlayer.getX()-5,mainPlayer.getY()-50);
+        //Counter.setScore(0);
     }
     public Player getPlayer(){
         return mainPlayer;

@@ -33,12 +33,7 @@ public class Level2 extends World
     public Level2(Player player)
     {    
         super(1000, 600, 1);
-        //setBackground(jardin);
-<<<<<<< HEAD
         mainPlayer=player;
-=======
-        mainPlayer=new Player();
->>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
         addObject(mainPlayer,getWidth()/3,getHeight()/3);
         addObject(counter,130,100);
         addObject(healthBar,mainPlayer.getX()-5,mainPlayer.getY()-50);
@@ -95,10 +90,6 @@ public class Level2 extends World
             if(zombiesSpawned>=32){
                 addObject(new ZombieBoss(mainPlayer,counter),600,800);
                 zombiesSpawned++;
-<<<<<<< HEAD
-                //addObject(new WeaponButton(counter),100,500);
-=======
->>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
             }
             if(zombiesSpawned==63){
                 Level3 level3 = new Level3(mainPlayer);

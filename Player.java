@@ -14,15 +14,22 @@ public class Player extends Actor
      */
     private int speed=3;
     private int time=0;
-    public int getPlayerTime(){
+    /*private WeaponButton weaponbutton;
+    public WeaponButton getWeaponButton(){
+        return weaponbutton;
+    }*/
+    public int getTime(){
         return time;
     }
-    public int getPlayerSpeed(){
+    public int getSpeed(){
         return speed;
     }
     public Player(){
         
     }
+    /*public Player(WeaponButton weaponbutton){
+        this.weaponbutton=weaponbutton;
+    }*/
     public void act()
     {
         time++;
@@ -32,6 +39,9 @@ public class Player extends Actor
         hitByZombie();
         //touchBoxes();
         
+    }
+    public int getPlayerTime(){
+        return time;
     }
         public void turnAround(){
             if(Greenfoot.getMouseInfo()!=null){//si tenemos el mouse dentro
@@ -53,41 +63,13 @@ public class Player extends Actor
         } 
         }
         public void fire(){
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) ){//sustituir por espacio
+            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation());
                 projectile.move(25);
-<<<<<<< HEAD
-            }/*
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))&& weaponbutton.getWeaponUpgrade()==2){//sustituir por espacio
-                Projectile projectile=new Projectile();
-                getWorld().addObject(projectile,getX(),getY());//+70 +20
-                projectile.setRotation(getRotation()-5);
-                projectile.move(20);
-                Projectile projectile2=new Projectile();
-                getWorld().addObject(projectile2,getX(),getY());//+70 +20
-                projectile2.setRotation(getRotation()+5);
-                projectile2.move(5);
-            }
-            if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null)) && weaponbutton.getWeaponUpgrade()==3){//sustituir por espacio
-                Projectile projectile=new Projectile();
-                getWorld().addObject(projectile,getX(),getY());//+70 +20
-                projectile.setRotation(getRotation()-5);
-                projectile.move(20);
-                Projectile projectile2=new Projectile();
-                getWorld().addObject(projectile2,getX(),getY());//+70 +20
-                projectile2.setRotation(getRotation()+5);
-                projectile2.move(5);
-                Projectile projectile3=new Projectile();
-                getWorld().addObject(projectile3,getX(),getY());//+70 +20
-                projectile3.setRotation(getRotation());
-                projectile3.move(5);
-            }*/
-=======
             }
             
->>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
         }
         
         public boolean hitByZombie(){
@@ -99,15 +81,12 @@ public class Player extends Actor
             else
             return false;
         }
-<<<<<<< HEAD
-        public void touchBoxes(){
+        /*public void touchBoxes(){
         Actor weaponButton= getOneIntersectingObject(WeaponButton.class);
         if(Greenfoot.mousePressed(weaponbutton)){
                 getWorld().removeObject(weaponButton);
         }
-    }
-=======
-        
->>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
-}
-        // Add your action code here}
+        }*/
+        // Add your action code here.
+    
+}       // Add your action code here}

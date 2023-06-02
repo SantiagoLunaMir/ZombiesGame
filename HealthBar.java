@@ -47,7 +47,28 @@ public class HealthBar extends Actor
 
         loseHealth(level2);
         }
+        if (world instanceof Level3) {
+        Level3 level3 = (Level3) world;
+        Player mainPlayer = level3.getPlayer();
+        setLocation(mainPlayer.getX() - 5, mainPlayer.getY() - 50);
+
+        loseHealth(level3);
+        }
         // Add your action code here.
+    }
+    public void loseHealth(Level3 level3){
+        World world=getWorld();
+        //Level1 level1=(Level1)world;
+        if(level3.getPlayer().hitByZombie()){
+            health--;
+        }
+        if(health<=0){
+            getWorld().showText("REQUIEM\nNOT ACHIEVED.\n\n\n con tiempo de: "+(level3.getPlayer().getPlayerTime()/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
+            
+            getWorld().addObject(new BackButton(), 200, 500);
+            //Greenfoot.stop();
+            //Greenfoot.setWorld(new ScoreboardScreen());
+        }
     }
     public void loseHealth(Level2 level2){
         World world=getWorld();
@@ -57,6 +78,7 @@ public class HealthBar extends Actor
         }
         if(health<=0){
             getWorld().showText("REQUIEM\nNOT ACHIEVED.\n\n\n con tiempo de: "+(level2.getPlayer().getPlayerTime()/60)+" segundos.\n",getWorld().getWidth()/2,getWorld().getHeight()/2);
+            
             getWorld().addObject(new BackButton(), 200, 500);
             //Greenfoot.stop();
             //Greenfoot.setWorld(new ScoreboardScreen());

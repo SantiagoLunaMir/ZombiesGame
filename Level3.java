@@ -14,16 +14,16 @@ public class Level3 extends World
      * 
      */
     private final int SPAWN_SPEED=50;
-    
     private int count=0;
     private int cantZ=8;
-    private int maxZombiesInWorld=32;
+    private int money=0;
     private int zombiesSpawned=0;//0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
     private Player mainPlayer=new Player();
     private Counter counter=new Counter();
     private HealthBar healthBar=new HealthBar();
+    private GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
     public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
         this.mainPlayer = mainPlayer;
         this.counter = counter;
@@ -33,12 +33,8 @@ public class Level3 extends World
     public Level3(Player player)
     {    
         super(1000, 600, 1);
-<<<<<<< HEAD
         mainPlayer=player;
-=======
-        mainPlayer=new Player();
->>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
-        addObject(mainPlayer,getWidth()/2,getHeight()/2);
+        addObject(mainPlayer,getWidth()/3,getHeight()/3);
         addObject(counter,130,100);
         addObject(healthBar,mainPlayer.getX()-5,mainPlayer.getY()-50);
     }
@@ -48,10 +44,14 @@ public class Level3 extends World
     public void act(){
         count++;
         spawnZombies();
+        //cash(counter);
         
     }
+    public void cash(Counter counter){
+        money=counter.getScore()*5;
+    }
     public void spawnZombies(){
-        if(count%SPAWN_SPEED==0 && zombiesSpawned<=85){
+        if(count%SPAWN_SPEED==0 && zombiesSpawned<=63){
             randomSpawn=Greenfoot.getRandomNumber(cantZ);
             switch(randomSpawn){
              case 0: 
@@ -90,42 +90,11 @@ public class Level3 extends World
             if(zombiesSpawned>=32){
                 addObject(new ZombieBoss(mainPlayer,counter),600,800);
                 zombiesSpawned++;
-<<<<<<< HEAD
-                //addObject(new WeaponButton(counter),100,500);
-=======
->>>>>>> 7aefd3efd0d9c6e803846cbeec37f455651618b5
             }
-            //dar fin o scoreboard
-        }
-        if(count%SPAWN_SPEED==0 && zombiesSpawned>32 && zombiesSpawned<=50){
-            randomSpawn=Greenfoot.getRandomNumber(cantZ);
-            switch(randomSpawn){
-             case 0: 
-                 addObject(new Zombie(mainPlayer,counter),0,0);
-                 zombiesSpawned++;
-                 break;
-             case 1: 
-                 addObject(new Zombie(mainPlayer,counter),0,800);
-                 zombiesSpawned++;
-                 break;   
-             case 2: 
-                 addObject(new Zombie(mainPlayer,counter),600,0);
-                 zombiesSpawned++;
-                 break;
-             case 3: 
-                 addObject(new Zombie(mainPlayer,counter),600,800);
-                 zombiesSpawned++;
-                 break;
-            }
-            if(zombiesSpawned==49){
-                addObject(new ZombieBoss(mainPlayer,counter),600,800);
-                zombiesSpawned++;
-            }
-            if(zombiesSpawned>=50){
-                Creditos creditos= new Creditos();
+            if(zombiesSpawned==63){
+                Creditos creditos = new Creditos();
                 Greenfoot.setWorld(creditos);
             }
         }
-        
     }
 }
