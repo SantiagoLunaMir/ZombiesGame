@@ -64,6 +64,7 @@ public class HealthBar extends Actor
         }
         if(health<=0){
             Greenfoot.setWorld(new GameOver());
+            Greenfoot.playSound("defeat.mp3");
         }
     }
     public void loseHealth(Level2 level2){
@@ -74,6 +75,7 @@ public class HealthBar extends Actor
         }
         if(health<=0){
             Greenfoot.setWorld(new GameOver());
+            Greenfoot.playSound("defeat.mp3");
         }
     }
     public void loseHealth(Level1 level1){
@@ -84,7 +86,7 @@ public class HealthBar extends Actor
         }
         if(health<=0){
             Greenfoot.setWorld(new GameOver());
-
+            Greenfoot.playSound("defeat.mp3");
         }
     }
 }
