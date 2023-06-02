@@ -1,5 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import greenfoot.GreenfootImage; 
+import java.util.List;
+
 /**
  * Write a description of class MyWorld here.
  * 
@@ -21,7 +23,7 @@ public class Level1 extends World
     private int zombiesSpawned=0;//0
     private int zombiesBossSpawned=0;
     private int randomSpawn=Greenfoot.getRandomNumber(cantZ);
-    private Player mainPlayer=new Player();
+    private Player mainPlayer/*=new Player()*/;
     private Counter counter=new Counter();
     private HealthBar healthbar=new HealthBar();
     GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
@@ -38,6 +40,7 @@ public class Level1 extends World
         return mainPlayer;
     }
     public void act(){
+        mainPlayer = getPlayer();
         count++;
         spawnZombies();
         
@@ -85,7 +88,7 @@ public class Level1 extends World
                 addObject(new WeaponButton(counter),100,500);
             }
             if(zombiesSpawned==33){
-                Level2 level2 = new Level2();
+                Level2 level2 = new Level2(mainPlayer);
                 level2.setAttributes(mainPlayer, counter, healthbar,zombiesSpawned);
                 Greenfoot.setWorld(level2);
             }

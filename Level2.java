@@ -32,11 +32,11 @@ public class Level2 extends World
         this.healthBar = healthBar;
         this.zombiesSpawned=zombiesSpawned;
     }
-    public Level2()
+    public Level2(Player player)
     {    
         super(1000, 600, 1);
         //setBackground(jardin);
-        mainPlayer=new Player(weaponbutton);
+        mainPlayer=player;
         addObject(mainPlayer,getWidth()/3,getHeight()/3);
         addObject(counter,130,100);
         addObject(healthBar,mainPlayer.getX()-5,mainPlayer.getY()-50);
@@ -94,10 +94,10 @@ public class Level2 extends World
             if(zombiesSpawned>=32){
                 addObject(new ZombieBoss(mainPlayer,counter),600,800);
                 zombiesSpawned++;
-                addObject(new WeaponButton(counter),100,500);
+                //addObject(new WeaponButton(counter),100,500);
             }
             if(zombiesSpawned==63){
-                Level3 level3 = new Level3();
+                Level3 level3 = new Level3(mainPlayer);
                 level3.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);
                 Greenfoot.setWorld(level3);
             }

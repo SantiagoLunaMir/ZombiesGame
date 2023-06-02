@@ -20,6 +20,5 @@ public class Projectile extends Actor
         if(isAtEdge()){
             getWorld().removeObject(this);
         }
-        // Add your action code here.
     }
 }

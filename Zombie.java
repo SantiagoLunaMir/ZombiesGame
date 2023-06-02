@@ -33,6 +33,12 @@ public class Zombie extends Actor
         hitByProjectile();
         // Add your action code here.
     }
+    public void followPlayer(Player player) {
+        if (player != null) {
+            turnTowards(player.getX(), player.getY());
+            move(1);
+        }
+    }
     public void animate(){
         if(count%animateSpeed==0){
             if(animateImage>16){

@@ -65,7 +65,7 @@ public class Player extends Actor
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
                 projectile.setRotation(getRotation());
                 projectile.move(25);
-            }
+            }/*
             if((Greenfoot.isKeyDown("space") || Greenfoot.mousePressed(null))&& weaponbutton.getWeaponUpgrade()==2){//sustituir por espacio
                 Projectile projectile=new Projectile();
                 getWorld().addObject(projectile,getX(),getY());//+70 +20
@@ -89,7 +89,7 @@ public class Player extends Actor
                 getWorld().addObject(projectile3,getX(),getY());//+70 +20
                 projectile3.setRotation(getRotation());
                 projectile3.move(5);
-            }
+            }*/
         }
         
         public boolean hitByZombie(){
@@ -106,7 +106,5 @@ public class Player extends Actor
         if(Greenfoot.mousePressed(weaponbutton)){
                 getWorld().removeObject(weaponButton);
         }
-        }
-        // Add your action code here.
-    
+    }
 }
