@@ -94,7 +94,7 @@ public class Level3 extends World
                  break;
             }
         }
-            if(counter.getScore()>=119){
+            if(counter.getScore()>=114){
                 finalScore=counter.getScore()/mainPlayer.getTime();
                 Creditos creditos = new Creditos(finalScore);
                 //creditos.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);

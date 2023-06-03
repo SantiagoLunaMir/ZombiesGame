@@ -98,7 +98,7 @@ public class Level2 extends World
                  break;
             }
         }
-            if(counter.getScore()>=79){
+            if(counter.getScore()>=75){
                 Level3 level3 = new Level3(mainPlayer);
                 level3.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);
                 Greenfoot.setWorld(level3);
