@@ -26,6 +26,7 @@ public class Level3 extends World
     private HealthBar healthBar=new HealthBar();
     private Coche1 coche11=new Coche1();
     private Coche2 coche21=new Coche2();
+    private boolean bandera=false;
     private GreenfootImage jardin=new GreenfootImage("37004198-camino-a-pie-a-través-del-jardín-en-vista-aérea.jpg");
     public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
         this.mainPlayer = mainPlayer;
@@ -94,6 +95,13 @@ public class Level3 extends World
                  break;
             }
         }
+        if (counter.getScore() == 110&&bandera==false) {
+                Mensaje mensaje = new Mensaje("ESTOY HARTO!!, saldre corriendo lo antes posible");
+                addObject(mensaje, getWidth() / 2, 15);
+                Greenfoot.delay(150); // Pausar el juego durante 15 segundos (300 ciclos por segundo)
+                removeObject(mensaje);
+                bandera=true;
+            }
             if(counter.getScore()>=114){
                 finalScore=counter.getScore()/mainPlayer.getTime();
                 Creditos creditos = new Creditos(finalScore);

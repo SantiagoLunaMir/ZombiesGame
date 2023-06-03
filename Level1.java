@@ -30,6 +30,7 @@ public class Level1 extends World
     private Cama cama1=new Cama();
     private Cama cama2=new Cama();
     private Cama cama3=new Cama();
+    private boolean bandera=false;
     public Level1()
     {    
         super(1000, 600, 1);
@@ -88,6 +89,13 @@ public class Level1 extends World
                  addObject(new Zombie(mainPlayer,counter),getWidth(),getHeight()/2);
                  zombiesSpawned++;
                  break;
+            }       
+            if (counter.getScore() == 40&&bandera==false) {
+                Mensaje mensaje = new Mensaje("Si los Zombies no paran pronto, me ire de aquí...");
+                addObject(mensaje, getWidth() / 2, 15);
+                Greenfoot.delay(150); // Pausar el juego durante 15 segundos (300 ciclos por segundo)
+                removeObject(mensaje);
+                bandera=true;
             }
             if(counter.getScore()>=59||zombiesSpawned>=59){
                 Level2 level2 = new Level2(mainPlayer);

@@ -27,6 +27,7 @@ public class Level2 extends World
     private SillasJardin sillasjardin1=new SillasJardin();
     private SillasJardin sillasjardin2=new SillasJardin();
     private SillasJardin sillasjardin3=new SillasJardin();
+    private boolean bandera=false;
     public void setAttributes(Player mainPlayer, Counter counter, HealthBar healthBar,int zombiesSpawned) {
         this.mainPlayer = mainPlayer;
         this.counter = counter;
@@ -98,6 +99,13 @@ public class Level2 extends World
                  break;
             }
         }
+            if (counter.getScore() == 70&&bandera==false) {
+                Mensaje mensaje = new Mensaje("Maldición!, Ahora gigantes?? acabo de salir del hospital y ahora tengo que correr a la carretera.");
+                addObject(mensaje, getWidth() / 2, 15);
+                Greenfoot.delay(150); // Pausar el juego durante 15 segundos (300 ciclos por segundo)
+                removeObject(mensaje);
+                bandera=true;
+            }
             if(counter.getScore()>=75){
                 Level3 level3 = new Level3(mainPlayer);
                 level3.setAttributes(mainPlayer, counter, healthBar,zombiesSpawned);
